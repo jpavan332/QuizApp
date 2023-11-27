@@ -17,10 +17,10 @@ public class QuestionService {
 
 	public List<Question> getAllQuestions() {
 		// TODO Auto-generated method stub
-		List<Question> q1 = new ArrayList<Question>();
-		q1 = questionDao.findAll();
-		for(Question q2: q1)
-			System.out.println(q2);
+//		List<Question> q1 = new ArrayList<Question>();
+//		q1 = questionDao.findAll();
+//		for(Question q2: q1)
+//			System.out.println(q2);
 		return questionDao.findAll();
 		
 	}

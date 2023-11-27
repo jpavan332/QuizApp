@@ -14,25 +14,25 @@ public class Question {
 		@Id
 		@GeneratedValue(strategy = GenerationType.SEQUENCE)
 		private int id;
-		private String questionTitle;
+		private String questiontitle;
 		private String category;
-		private String difficultyLevel;
+		private String difficultylevel;
 		private String option1;
 		private String option2;
 		private String option3;
 		private String option4;
-		private String rightAnswer;
+		private String rightanswer;
 		public int getId() {
 			return id;
 		}
 		public String getQuestionTitle() {
-			return questionTitle;
+			return questiontitle;
 		}
 		public String getCategory() {
 			return category;
 		}
 		public String getDifficultyLevel() {
-			return difficultyLevel;
+			return difficultylevel;
 		}
 		public String getOption1() {
 			return option1;
@@ -47,7 +47,7 @@ public class Question {
 			return option4;
 		}
 		public String getRightAnswer() {
-			return rightAnswer;
+			return rightanswer;
 		}
 		
 		

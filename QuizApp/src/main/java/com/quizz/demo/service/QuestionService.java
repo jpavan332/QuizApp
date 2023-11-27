@@ -25,5 +25,26 @@ public class QuestionService {
 		
 	}
 
+	public List<Question> getQuestionByCategory(String category) {
+		// TODO Auto-generated method stub
+		return questionDao.findByCategory(category);
+		
+	}
+
+	public String addQuestion(Question question) {
+		// TODO Auto-generated method stub
+		
+//		System.out.println(question.getId());
+//		System.out.println(question.getQuestionTitle());
+		
+		
+		
+		questionDao.flush();
+		questionDao.save(question);
+		return "success";
+	}
+	
+	
+
 	
 }

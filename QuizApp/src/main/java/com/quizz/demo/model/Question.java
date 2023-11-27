@@ -8,31 +8,32 @@ import lombok.Data;
 
 
 
+//@Data
 @Entity
 public class Question {
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.SEQUENCE)
 		private int id;
-		private String questiontitle;
+		private String questionTitle;
 		private String category;
-		private String difficultylevel;
+		private String difficultyLevel;
 		private String option1;
 		private String option2;
 		private String option3;
 		private String option4;
-		private String rightanswer;
+		private String rightAnswer;
 		public int getId() {
 			return id;
 		}
 		public String getQuestionTitle() {
-			return questiontitle;
+			return questionTitle;
 		}
 		public String getCategory() {
 			return category;
 		}
 		public String getDifficultyLevel() {
-			return difficultylevel;
+			return difficultyLevel;
 		}
 		public String getOption1() {
 			return option1;
@@ -47,9 +48,35 @@ public class Question {
 			return option4;
 		}
 		public String getRightAnswer() {
-			return rightanswer;
+			return rightAnswer;
 		}
-		
+		public void setId(int id) {
+			this.id = id;
+		}
+		public void setQuestionTitle(String questionTitle) {
+			this.questionTitle = questionTitle;
+		}
+		public void setCategory(String category) {
+			this.category = category;
+		}
+		public void setDifficultyLevel(String difficultyLevel) {
+			this.difficultyLevel = difficultyLevel;
+		}
+		public void setOption1(String option1) {
+			this.option1 = option1;
+		}
+		public void setOption2(String option2) {
+			this.option2 = option2;
+		}
+		public void setOption3(String option3) {
+			this.option3 = option3;
+		}
+		public void setOption4(String option4) {
+			this.option4 = option4;
+		}
+		public void setRightAnswer(String rightAnswer) {
+			this.rightAnswer = rightAnswer;
+		}
 		
 		
 }

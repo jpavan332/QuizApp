@@ -77,6 +77,12 @@ public class Question {
 		public void setRightAnswer(String rightAnswer) {
 			this.rightAnswer = rightAnswer;
 		}
+		@Override
+		public String toString() {
+			return "Question [id=" + id + ", questionTitle=" + questionTitle + ", category=" + category
+					+ ", difficultyLevel=" + difficultyLevel + ", option1=" + option1 + ", option2=" + option2
+					+ ", option3=" + option3 + ", option4=" + option4 + ", rightAnswer=" + rightAnswer + "]";
+		}
 		
 		
 }

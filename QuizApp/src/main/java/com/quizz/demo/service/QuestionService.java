@@ -44,7 +44,7 @@ public class QuestionService {
 			e.printStackTrace();
 		}
 		
-		return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
 		
 	}
 
@@ -68,8 +68,15 @@ public class QuestionService {
 
 	public ResponseEntity<String> delQuestion(Question question) {
 		// TODO Auto-generated method stub
-		questionDao.delete(question);
-		return new ResponseEntity<String>("Deleted", HttpStatus.OK);
+		
+		
+		try {
+			questionDao.delete(question);
+			return new ResponseEntity<String>("Deleted", HttpStatus.OK);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return new ResponseEntity<>("not deleted", HttpStatus.BAD_REQUEST);
 	}
 	
 	

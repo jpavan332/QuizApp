@@ -23,7 +23,10 @@ public class QuizService {
 	public ResponseEntity<String> createQuiz(String category, int nofQuestions, String title) {
 		// TODO Auto-generated method stub
 		Quiz quiz = new Quiz();
+		
+//		quiz.setId(nofQuestions);
 		quiz.setTitle(title);
+		
 		List<Question> questions = questionDao.findRandomQuestionsByCategory(category,nofQuestions);
 		quiz.setQuestions(questions);
 		quizDao.save(quiz);

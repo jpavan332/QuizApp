@@ -1,5 +1,6 @@
 package com.quizz.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,13 +9,17 @@ import lombok.Data;
 
 
 
-//@Data
+@Data
 @Entity
 public class Question {
 
 		@Id
-		@GeneratedValue(strategy = GenerationType.SEQUENCE)
-		private int id;
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+//		@Column(name = "id")
+		private Integer id;
+		public void setId(Integer id) {
+			this.id = id;
+		}
 		private String questionTitle;
 		private String category;
 		private String difficultyLevel;
@@ -23,7 +28,7 @@ public class Question {
 		private String option3;
 		private String option4;
 		private String rightAnswer;
-		public int getId() {
+		public Integer getId() {
 			return id;
 		}
 		public String getQuestionTitle() {
@@ -49,9 +54,6 @@ public class Question {
 		}
 		public String getRightAnswer() {
 			return rightAnswer;
-		}
-		public void setId(int id) {
-			this.id = id;
 		}
 		public void setQuestionTitle(String questionTitle) {
 			this.questionTitle = questionTitle;

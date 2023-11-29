@@ -42,11 +42,45 @@ public class QuizService {
 		List<QuestionWrapper> questionToClients = new ArrayList<QuestionWrapper>();
 		for(Question q : questionFromDB)
 		{
-			QuestionWrapper qw = new QuestionWrapper(id, q.getQuestionTitle(), q.getCategory(), q.getDifficultyLevel(), q.getOption1(), q.getOption2(), q.getOption3(), q.getOption4());
+			QuestionWrapper qw = new QuestionWrapper(q.getId(), q.getQuestionTitle(), q.getCategory(), q.getDifficultyLevel(), q.getOption1(), q.getOption2(), q.getOption3(), q.getOption4());
 			questionToClients.add(qw);
 		}
 		
 		return new ResponseEntity<List<QuestionWrapper>>(questionToClients,HttpStatus.OK);
+	}
+
+
+	public ResponseEntity<Integer> getResult(Integer id, List<Response> response) {
+		// TODO Auto-generated method stub
+		Optional<Quiz> quiz = quizDao.findById(id);
+		List<Question> questionFromDB = quiz.get().getQuestions();
+		Integer correct = 0;
+		System.out.println(questionFromDB);
+		//System.out.println(response);
+	
+		for(Response p: response)
+		{
+			//System.out.println(p.getId());
+			for(Question q: questionFromDB)
+			{
+				
+				if(p.getId().equals(q.getId()))
+				{
+					
+					System.out.println("Response:"+p.getId());
+					System.out.println("RightAnswer:"+q.getId());
+					
+					
+					
+					if(((p.getResponse().toString())).equalsIgnoreCase((q.getRightAnswer()).toString())){
+						correct++;
+						break;
+					}
+				}
+			}
+		}
+		
+		return new ResponseEntity<Integer>(correct, HttpStatus.OK);
 	}
 	
 	

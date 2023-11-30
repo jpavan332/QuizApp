@@ -27,7 +27,7 @@ public class Quiz {
 	}
 	private String title;
 	
-	
+	// this is to add many to many relation with the db
 	
 	@ManyToMany
 	private List<Question> questions;
